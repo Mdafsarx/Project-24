@@ -4,7 +4,7 @@ const Credit = ({data}) => {
     return (
         <div className="md:w-[25%]">
             <div className="bg-[#ffffff] shadow-xl  p-5">
-                <h2 className="font-bold border-b-2 pb-2">Credit Hour remaining: 0 hr</h2>
+                <h2 className="font-bold border-b-2 pb-2">Credit Hour remaining: {15 -  data.reduce((P,C)=>P+C.credit,0)} hr</h2>
                 
                 <div className="py-3">
                 <h2 className="font-bold">Course Name:</h2> 
@@ -15,7 +15,7 @@ const Credit = ({data}) => {
                 </ol>
                 </div>
                  
-                <h3 className="font-bold py-2 border-b-2">Total Credit Hour: 15</h3> 
+                <h3 className="font-bold py-2 border-b-2" >Total Credit Hour: <span id="Credit">{data.reduce((P,C)=>P+C.credit,0)}</span></h3> 
 
                 <h3 className="font-bold py-2 border-b-2">Total Price: {data.reduce((p,c)=>p+c.price,0)} USD</h3> 
               

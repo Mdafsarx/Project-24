@@ -5,13 +5,23 @@ import Header from "./header/Header"
 
 function App() {
 
+  
 const [dataForCredit,setDataCredit]=useState([])
 
+
 function handleCredit(data){
-setDataCredit([...dataForCredit,data])
+  // const CreditSum=dataForCredit.reduce((p,c)=>p+c.Credit)
+  const Credit=document.getElementById('Credit').innerText
+  if(parseInt(Credit) + data.credit >15){return}
+  else{
+    
+  }
+
+  setDataCredit([...dataForCredit,data])
+
 
 }
-
+// if(dataForCredit.reduce((p,c)=>p+c.credit,0)>=15){alert()}
 
   return (
     <div>
